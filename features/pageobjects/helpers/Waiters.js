@@ -10,5 +10,13 @@ class Waiters {
       throw ErrorWrapper.elementError(e, element);
     }
   }
+  async waitElementIsExist(elementLocator, timeout = config.timeouts.default) {
+    const element = await $(elementLocator);
+    try {
+      await element.waitForExist({ timeout });
+    } catch (e) {
+      throw ErrorWrapper.elementError(e, element);
+    }
+  }
 }
 export default new Waiters();

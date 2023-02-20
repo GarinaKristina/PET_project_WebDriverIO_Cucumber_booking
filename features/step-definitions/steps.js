@@ -7,6 +7,6 @@ Given(/^Open www.booking.com website$/, async () => {
 });
 
 When(/^Click on "([^"]*)" button$/, async (locatorName) => {
-  await MainPage.clickOnModalWindowButton(locatorName);
+  await MainPage.clickOntheButton(locatorName);
 });
 
