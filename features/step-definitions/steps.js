@@ -10,6 +10,10 @@ When(/^Click on "([^"]*)" button$/, async (buttonName) => {
   await MainPage.clickOntheButton(buttonName);
 });
 
+When(/^Type "([^"]*)" in "([^"]*)" field$/, async (text, fieldName) => {
+  await MainPage.fillTheField(fieldName, text);
+});
+
 Then(/^Check the title contains "([^"]*)"$/, async (title) => {
   await MainPage.titleContains(title);
 });

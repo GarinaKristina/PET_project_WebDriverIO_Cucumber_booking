@@ -11,11 +11,12 @@ class ElementClicker {
     }
   }
 
-  async setValue(element, text) {
+  async setValueInField(element, text) {
     try {
       await element.setValue(text);
+      console.log(await element.getValue());
     } catch (error) {
-      throw ErrorWrapper.elementError(error, selector);
+      throw ErrorWrapper.elementError(error, element);
     }
   }
 }

@@ -10,15 +10,20 @@ class MainPage extends BasePage {
     },
   };
 
-  searchBoxField = '.c-autocomplete__input sb-searchbox__input sb-destination__input';
+  fields = {
+    SearchBoxField: {
+      fieldName: 'Where you want to move',
+      fieldLocator: '//input[@name="ss"]',
+    },
+  };
 
   getButtonByName(buttonName, args) {
     for (const i in this.buttons) {
       if (typeof this.buttons[i].buttonName === 'string') {
-        return args ? this.button[i].buttonLocator(args) : this.buttons[i].buttonLocator;
+        return args ? this.buttons[i].buttonLocator(args) : this.buttons[i].buttonLocator;
       }
     }
-    throw new Error(`Unable to find button with name: ${buttonName}`);
+    throw new Error(`Can not find button with name: ${buttonName}`);
   }
 
   async clickOntheButton(buttonName, args) {
@@ -27,12 +32,24 @@ class MainPage extends BasePage {
     await ElementClicker.click(locator);
   }
 
-  async titleContains(title) {
-    await expect(browser).toHaveTitleContaining(title);
+  getFieldByName(fieldName) {
+    for (const i in this.fields) {
+      if (typeof this.fields[i].fieldName === 'string') {
+        return this.fields[i].fieldLocator;
+      }
+    }
+    throw new Error(`Can not find button with name: ${fieldName}`);
   }
 
-  async fillTheField(element, text) {
-    await ElementClicker.setValue(element, text);
+  async fillTheField(fieldName, text) {
+    const element = this.getFieldByName(fieldName);
+    console.log(element);
+    await Waiters.waitElementIsDisplayed(element);
+    await ElementClicker.setValueInField(element, text);
+  }
+
+  async titleContains(title) {
+    await expect(browser).toHaveTitleContaining(title);
   }
 }
 

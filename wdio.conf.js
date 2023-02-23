@@ -3,9 +3,7 @@ export const config = {
 
   specs: ['./features/**/*.feature'],
 
-  exclude: [
-    // 'path/to/excluded/files'
-  ],
+  exclude: ['./features/**/OpenWebSite.feature'],
 
   maxInstances: 10,
 
@@ -61,7 +59,7 @@ export const config = {
     ignoreUndefinedDefinitions: false,
   },
 
-  beforeStep: async function (step, scenario, context) {
+  before: async function (test, context) {
     await browser.maximizeWindow();
   },
 
