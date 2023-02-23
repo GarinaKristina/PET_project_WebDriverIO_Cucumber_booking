@@ -1,7 +1,8 @@
 If you want run my tests:
-1.Just clone the project
-2.Run "npm install"
-3.Run "npm run wdio"
+
+1.Just clone the project,
+2.Run "npm install",
+3.Run "npm run wdio".
 
 Hi!
 
