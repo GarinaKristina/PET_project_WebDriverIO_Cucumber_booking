@@ -4,4 +4,4 @@ Feature: Posobolity open the website
 
     Given Open www.booking.com website
     When Click on "accept" button
-    # Then The title contains "Booking.com"
+    Then Check the title contains "Booking.com"

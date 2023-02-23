@@ -10,3 +10,7 @@ When(/^Click on "([^"]*)" button$/, async (locatorName) => {
   await MainPage.clickOntheButton(locatorName);
 });
 
+Then(/^Check the title contains "([^"]*)"$/, async (title) => {
+  await expect(browser).toHaveTitleContaining(title);
+});
+
