@@ -1,7 +1,9 @@
 If you want run my tests:
 
 1.Just clone the project,
+
 2.Run "npm install",
+
 3.Run "npm run wdio".
 
 Hi!
@@ -15,3 +17,7 @@ In this project I am implement the Page Object pattern with Helpers and Utils.
 As a report I choose the Allure report,I liked it because it clearly and beautifully shows detailed statistics in the form of graphs. Also, in case of failure, he attaches a screenshot. And it stores the entire history with triggered parameters. If desired, you can set the severity and so on...
 
 In addition, I used pre/post to run the scripts.
+
+The next thing I want to do is set up CI
+
+Thank you !
