@@ -1,3 +1,5 @@
+// const allure = require('allure-commandline');
+import allure from './node_modules/allure-commandline/index.js';
 export const config = {
   runner: 'local',
 
@@ -36,8 +38,34 @@ export const config = {
 
   framework: 'cucumber',
 
-  reporters: ['spec'],
+  reporters: [
+    [
+      'allure',
+      {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
+      },
+    ],
+  ],
+  // onComplete: function () {
+  //   const reportError = new Error('Could not generate Allure report');
+  //   const generation = allure(['generate', 'allure-results', '--clean']);
+  //   return new Promise((resolve, reject) => {
+  //     const generationTimeout = setTimeout(() => reject(reportError), 5000);
 
+  //     generation.on('exit', function (exitCode) {
+  //       clearTimeout(generationTimeout);
+
+  //       if (exitCode !== 0) {
+  //         return reject(reportError);
+  //       }
+
+  //       console.log('Allure report successfully generated');
+  //       resolve();
+  //     });
+  //   });
+  // },
   cucumberOpts: {
     require: ['./features/step-definitions/steps.js'],
     backtrace: false,
@@ -150,8 +178,11 @@ export const config = {
    * @param {number}             result.duration  duration of scenario in milliseconds
    * @param {Object}             context          Cucumber World object
    */
-  // afterStep: function (step, scenario, result, context) {
-  // },
+  afterStep: async function (step, scenario, { error, duration, passed }, context) {
+    if (error) {
+      await browser.takeScreenshot();
+    }
+  },
   /**
    *
    * Runs after a Cucumber Scenario.
