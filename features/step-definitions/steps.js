@@ -6,11 +6,11 @@ Given(/^Open www.booking.com website$/, async () => {
   await MainPage.open();
 });
 
-When(/^Click on "([^"]*)" button$/, async (locatorName) => {
-  await MainPage.clickOntheButton(locatorName);
+When(/^Click on "([^"]*)" button$/, async (buttonName) => {
+  await MainPage.clickOntheButton(buttonName);
 });
 
 Then(/^Check the title contains "([^"]*)"$/, async (title) => {
-  await expect(browser).toHaveTitleContaining(title);
+  await MainPage.titleContains(title);
 });
 

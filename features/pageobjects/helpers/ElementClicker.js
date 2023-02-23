@@ -10,5 +10,13 @@ class ElementClicker {
       throw ErrorWrapper.elementError(error, selector);
     }
   }
+
+  async setValue(element, text) {
+    try {
+      await element.setValue(text);
+    } catch (error) {
+      throw ErrorWrapper.elementError(error, selector);
+    }
+  }
 }
 export default new ElementClicker();
