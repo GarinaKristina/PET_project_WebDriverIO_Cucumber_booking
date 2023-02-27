@@ -1,5 +1,5 @@
 import BasePage from './BasePage.js';
-import ElementClicker from './helpers/ElementClicker.js';
+import ElementAction from './helpers/ElementAction.js';
 import Waiters from './helpers/Waiters.js';
 
 class MainPage extends BasePage {
@@ -7,6 +7,14 @@ class MainPage extends BasePage {
     CookieButton: {
       buttonName: 'Accept cookie',
       buttonLocator: '#onetrust-accept-btn-handler',
+    },
+    StartDateTripButton: {
+      buttonName: 'Travel start date',
+      buttonLocator: 'button[data-testid="date-display-field-start"]',
+    },
+    SubmitButton: {
+      buttonName: 'Submit',
+      buttonLocator: '//button[@type="submit"] | //*[class="sb-searchbox__button"]',
     },
   };
 
@@ -29,7 +37,7 @@ class MainPage extends BasePage {
   async clickOntheButton(buttonName, args) {
     const locator = this.getButtonByName(buttonName, args);
     await Waiters.waitElementIsDisplayed(locator);
-    await ElementClicker.click(locator);
+    await ElementAction.click(locator);
   }
 
   getFieldByName(fieldName) {
@@ -45,7 +53,8 @@ class MainPage extends BasePage {
     const element = this.getFieldByName(fieldName);
     console.log(element);
     await Waiters.waitElementIsDisplayed(element);
-    await ElementClicker.setValueInField(element, text);
+    await ElementAction.setValueInField(element, text);
+    await browser.pause(20000);
   }
 
   async titleContains(title) {

@@ -1,7 +1,7 @@
 import ErrorWrapper from '../utils/ErrorWraper.js';
 import GetData from './GetData.js';
 
-class ElementClicker {
+class ElementAction {
   async click(selector, visible = true) {
     try {
       const element = await GetData.getElement(selector, visible);
@@ -11,13 +11,13 @@ class ElementClicker {
     }
   }
 
-  async setValueInField(element, text) {
+  async setValueInField(selector, text, visible = true) {
     try {
+      const element = await GetData.getElement(selector, visible);
       await element.setValue(text);
-      console.log(await element.getValue());
     } catch (error) {
       throw ErrorWrapper.elementError(error, element);
     }
   }
 }
-export default new ElementClicker();
+export default new ElementAction();

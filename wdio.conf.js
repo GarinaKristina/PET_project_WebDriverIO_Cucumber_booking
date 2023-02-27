@@ -15,7 +15,7 @@ export const config = {
     },
   ],
 
-  logLevel: 'warn',
+  logLevel: 'info',
   timeouts: {
     default: 15000,
   },
