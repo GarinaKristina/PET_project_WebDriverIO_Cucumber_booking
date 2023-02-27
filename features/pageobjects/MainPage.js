@@ -18,6 +18,8 @@ class MainPage extends BasePage {
     },
   };
 
+  firstLocation = (locationName) => `//*[normalize-space()="${locationName}"]`;
+
   fields = {
     SearchBoxField: {
       fieldName: 'Where you want to move',
@@ -54,7 +56,7 @@ class MainPage extends BasePage {
     console.log(element);
     await Waiters.waitElementIsDisplayed(element);
     await ElementAction.setValueInField(element, text);
-    await browser.pause(20000);
+    await ElementAction.click(this.firstLocation(text));
   }
 
   async titleContains(title) {
