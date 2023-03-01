@@ -18,3 +18,7 @@ Then(/^Check the title contains "([^"]*)"$/, async (title) => {
   await MainPage.titleContains(title);
 });
 
+When(/^Choose data from "([^"]*)" to "([^"]*)"$/, async (dataFrom, dataTo) => {
+  await MainPage.chooseTheDataFromCalendar(dataFrom, dataTo);
+});
+

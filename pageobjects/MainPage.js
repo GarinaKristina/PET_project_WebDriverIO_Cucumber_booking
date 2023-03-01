@@ -16,9 +16,14 @@ class MainPage extends BasePage {
       buttonName: 'Submit',
       buttonLocator: '//button[@type="submit"] | //*[class="sb-searchbox__button"]',
     },
+    CalendarButton: {
+      buttonName: 'Calendar',
+      buttonLocator: '.ed2ff9f661',
+    },
   };
 
   firstLocation = (locationName) => `//*[normalize-space()="${locationName}"]`;
+  dataInCalendar = (data) => `//*[@aria-label="${data}"]`;
 
   fields = {
     SearchBoxField: {
@@ -56,12 +61,23 @@ class MainPage extends BasePage {
     await Waiters.waitElementIsDisplayed(element);
     await ElementAction.setValueInField(element, text);
     await ElementAction.click(this.firstLocation(text));
+    await ElementAction.click(element);
+    await ElementAction.sendKeys('\uE007');
   }
 
   async titleContains(title) {
     await expect(browser).toHaveTitleContaining(title);
   }
-}
 
+  async chooseTheDataFromCalendar(dataOne, dataTwo) {
+    const dataFrom = this.dataInCalendar(dataOne);
+    await Waiters.waitElementIsDisplayed(dataFrom);
+    await ElementAction.click(dataFrom);
+
+    const dataTo = this.dataInCalendar(dataTwo);
+    await Waiters.waitElementIsDisplayed(dataTo);
+    await ElementAction.click(dataTo);
+  }
+}
 export default new MainPage();
 

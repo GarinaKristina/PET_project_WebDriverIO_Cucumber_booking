@@ -19,5 +19,12 @@ class ElementAction {
       throw ErrorWrapper.elementError(error, element);
     }
   }
+  async sendKeys(keyText) {
+    try {
+      await browser.keys(keyText);
+    } catch (error) {
+      throw ErrorWrapper.elementError(error, keyText);
+    }
+  }
 }
 export default new ElementAction();
