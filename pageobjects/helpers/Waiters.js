@@ -1,5 +1,5 @@
 import ErrorWrapper from '../utils/ErrorWraper.js';
-import { config } from '../../../wdio.conf.js';
+import { config } from '../../wdio.conf.js';
 
 class Waiters {
   async waitElementIsDisplayed(elementLocator, timeout = config.timeouts.default) {
