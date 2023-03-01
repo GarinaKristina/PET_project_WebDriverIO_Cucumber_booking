@@ -53,7 +53,6 @@ class MainPage extends BasePage {
 
   async fillTheField(fieldName, text) {
     const element = this.getFieldByName(fieldName);
-    console.log(element);
     await Waiters.waitElementIsDisplayed(element);
     await ElementAction.setValueInField(element, text);
     await ElementAction.click(this.firstLocation(text));
