@@ -23,7 +23,7 @@ class MainPage extends BasePage {
     },
   };
 
-  firstLocation = (locationName) => `//*[normalize-space()="${locationName}"]`;
+  getFirstLocation = (locationName) => `//*[normalize-space()="${locationName}"]`;
   dataInCalendar = (data) => `//*[@aria-label="${data}"]`;
 
   fields = {
@@ -61,9 +61,9 @@ class MainPage extends BasePage {
     const element = this.getFieldByName(fieldName);
     await Waiters.waitElementIsDisplayed(element);
     await ElementAction.setValueInField(element, text);
-    await ElementAction.click(this.firstLocation(text));
+    await ElementAction.click(this.getFirstLocation(text));
     await ElementAction.click(element);
-    await ElementAction.sendKeys('\uE007');
+    await ElementAction.sendKeys(BasePage.enterKey());
   }
 
   async checkTheTitle(text) {
