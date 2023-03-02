@@ -1,5 +1,6 @@
 import BasePage from './BasePage.js';
 import ElementAction from './helpers/ElementAction.js';
+import GetData from './helpers/GetData.js';
 import Waiters from './helpers/Waiters.js';
 
 class MainPage extends BasePage {
@@ -65,11 +66,11 @@ class MainPage extends BasePage {
     await ElementAction.sendKeys('\uE007');
   }
 
-  async titleContains(title) {
-    await expect(browser).toHaveTitleContaining(title);
+  async checkTheTitle(text) {
+    await GetData.getElement(text);
   }
 
-  async chooseTheDataFromCalendar(dataOne, dataTwo) {
+  async selectTheDataFromCalendar(dataOne, dataTwo) {
     const dataFrom = this.dataInCalendar(dataOne);
     await Waiters.waitElementIsDisplayed(dataFrom);
     await ElementAction.click(dataFrom);

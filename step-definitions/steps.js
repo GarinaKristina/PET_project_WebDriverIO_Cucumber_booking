@@ -14,8 +14,8 @@ When(/^Type "([^"]*)" in "([^"]*)" field$/, async (text, fieldName) => {
   await MainPage.fillTheField(fieldName, text);
 });
 
-Then(/^Check the title contains "([^"]*)"$/, async (title) => {
-  await MainPage.titleContains(title);
+Then(/^Check the title contains "([^"]*)"$/, async (text) => {
+  await MainPage.checkTheTitle(text);
 });
 
 When(/^Choose data from "([^"]*)" to "([^"]*)"$/, async (dataFrom, dataTo) => {
