@@ -63,11 +63,11 @@ class MainPage extends BasePage {
     await ElementAction.setValueInField(element, text);
     await ElementAction.click(this.getFirstLocation(text));
     await ElementAction.click(element);
-    await ElementAction.sendKeys(BasePage.enterKey());
+    await ElementAction.sendKeys(BasePage.enterKey);
   }
 
   async checkTheTitle(text) {
-    await GetData.getElement(text);
+    await GetData.getTitle(text);
   }
 
   async selectTheDataFromCalendar(dataOne, dataTwo) {
@@ -81,4 +81,3 @@ class MainPage extends BasePage {
   }
 }
 export default new MainPage();
-
