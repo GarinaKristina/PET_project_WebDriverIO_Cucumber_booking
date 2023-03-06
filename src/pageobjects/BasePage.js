@@ -1,4 +1,4 @@
-import { config } from '../wdio.conf.js';
+import { config } from '../../wdio.conf.js';
 export default class BasePage {
   open() {
     return browser.url(config.baseUrl);
@@ -8,4 +8,3 @@ export default class BasePage {
     return '\uE007';
   }
 }
-

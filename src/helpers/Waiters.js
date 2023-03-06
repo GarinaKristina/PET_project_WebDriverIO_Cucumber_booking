@@ -1,4 +1,4 @@
-import ErrorWrapper from '../utils/ErrorWraper.js';
+import ErrorWrapper from '../helpers/utils/ErrorWraper.js';
 import { config } from '../../wdio.conf.js';
 
 class Waiters {
