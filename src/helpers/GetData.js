@@ -15,8 +15,5 @@ class GetData {
       throw ErrorWrapper.elementError(e, elementLocator);
     }
   }
-  async getTitle(text) {
-    await expect(browser).toHaveTitleContaining(text);
-  }
 }
 export default new GetData();

@@ -26,5 +26,8 @@ class ElementAction {
       throw ErrorWrapper.elementError(error, keyText);
     }
   }
+  async fillField(selector, text) {
+    await this.setValueInField(selector, text);
+  }
 }
 export default new ElementAction();

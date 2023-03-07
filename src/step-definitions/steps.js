@@ -11,14 +11,11 @@ When(/^Click on "([^"]*)" on "([^"]*)"$/, async (buttonName, pageName) => {
   await ElementAction.click(locator);
 });
 
-// When(/^Type "([^"]*)" in "([^"]*)" field$/, async (text, fieldName) => {
-//   await MainPage.fillTheField(fieldName, text);
-// });
+When(/^Type "([^"]*)" on Main Page in "([^"]*)"$/, async (text, fieldName) => {
+  const locator = Pages['Main Page'][fieldName];
+  await Pages['Main Page'].chooseLocationFromSearchField(locator, text);
+});
 
 Then(/^Check the title contains "([^"]*)"$/, async (expectedTitle) => {
   await Pages['Main Page'].checkTitle(expectedTitle);
 });
-
-// When(/^Choose data from "([^"]*)" to "([^"]*)"$/, async (dataFrom, dataTo) => {
-//   await MainPage.chooseTheDataFromCalendar(dataFrom, dataTo);
-// });
