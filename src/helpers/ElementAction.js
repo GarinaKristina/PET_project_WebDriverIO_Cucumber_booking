@@ -5,7 +5,6 @@ class ElementAction {
   async click(selector, visible = true) {
     try {
       const element = await GetData.getElement(selector, visible);
-      // const element = await GetData.getElement(parseFeatureElement(selector));
       await element.click();
     } catch (error) {
       throw ErrorWrapper.elementError(error, selector);

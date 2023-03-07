@@ -4,6 +4,6 @@ Feature: Booking the trip
 
     Given Open www.booking.com website
     When Click on "Accept cookie button" on "Main Page"
-    # Then Check the title contains "Booking.com"
+    Then Check the title contains "Booking.com"
     # When Type "Барселона" in "Where you want to move" field
     # Then Check the title contains "Барселона"

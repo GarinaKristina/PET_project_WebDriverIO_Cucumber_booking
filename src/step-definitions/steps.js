@@ -15,9 +15,9 @@ When(/^Click on "([^"]*)" on "([^"]*)"$/, async (buttonName, pageName) => {
 //   await MainPage.fillTheField(fieldName, text);
 // });
 
-// Then(/^Check the title contains "([^"]*)"$/, async (text) => {
-//   await MainPage.checkTheTitle(text);
-// });
+Then(/^Check the title contains "([^"]*)"$/, async (expectedTitle) => {
+  await Pages['Main Page'].checkTitle(expectedTitle);
+});
 
 // When(/^Choose data from "([^"]*)" to "([^"]*)"$/, async (dataFrom, dataTo) => {
 //   await MainPage.chooseTheDataFromCalendar(dataFrom, dataTo);
