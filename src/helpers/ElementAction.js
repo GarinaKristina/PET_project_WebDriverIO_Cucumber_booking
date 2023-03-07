@@ -11,7 +11,7 @@ class ElementAction {
     }
   }
 
-  async setValueInField(selector, text, visible = true) {
+  async setInputValue(selector, text, visible = true) {
     try {
       const element = await GetData.getElement(selector, visible);
       await element.setValue(text);
@@ -26,10 +26,6 @@ class ElementAction {
     } catch (error) {
       throw ErrorWrapper.elementError(error, keyText);
     }
-  }
-
-  async setInputValue(selector, text) {
-    await this.setValueInField(selector, text);
   }
 }
 export default new ElementAction();
