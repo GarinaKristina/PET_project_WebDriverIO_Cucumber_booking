@@ -17,7 +17,7 @@
     "wdio-chromedriver-service": "^8.1.1"
   },
   "scripts": {
-    "prewdio": "rimraf allure-results && npx eslint ./pageobjects/**/*.js",
+    "prewdio": "rimraf allure-results && npx eslint ./**/*.js --fix",
     "wdio": "wdio run ./wdio.conf.js",
     "postwdio": "allure generate allure-results/ --clean && allure open",
     "open_report": "allure open",

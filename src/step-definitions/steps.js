@@ -14,6 +14,7 @@ When(/^Click on "([^"]*)" on "([^"]*)"$/, async (buttonName, pageName) => {
 When(/^Type "([^"]*)" on Main Page in "([^"]*)"$/, async (text, fieldName) => {
   const locator = Pages['Main Page'][fieldName];
   await Pages['Main Page'].chooseLocationFromSearchField(locator, text);
+  await ElementAction.sendKeys(Pages['Main Page'].enterKey);
 });
 
 Then(/^Check the title contains "([^"]*)"$/, async (expectedTitle) => {

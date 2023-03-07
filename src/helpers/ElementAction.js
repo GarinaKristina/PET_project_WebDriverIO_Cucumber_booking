@@ -19,6 +19,7 @@ class ElementAction {
       throw ErrorWrapper.elementError(error, element);
     }
   }
+
   async sendKeys(keyText) {
     try {
       await browser.keys(keyText);
@@ -26,6 +27,7 @@ class ElementAction {
       throw ErrorWrapper.elementError(error, keyText);
     }
   }
+
   async fillField(selector, text) {
     await this.setValueInField(selector, text);
   }

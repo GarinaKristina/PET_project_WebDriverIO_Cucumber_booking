@@ -6,9 +6,10 @@ export default class BasePage {
     return browser.url(config.baseUrl);
   }
 
-  static get enterKey() {
+  get enterKey() {
     return '\uE007';
   }
+
   async checkTitle(expectedTitle) {
     const actualTitle = await browser.getTitle();
     expectChai(actualTitle).to.include(expectedTitle);

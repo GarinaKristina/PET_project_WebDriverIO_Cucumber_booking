@@ -3,7 +3,7 @@ export const config = {
 
   specs: ['./features/**/*.feature'],
 
-  exclude: ['./features/**/OpenWebSite.feature'],
+  // exclude: [''],
 
   maxInstances: 10,
 

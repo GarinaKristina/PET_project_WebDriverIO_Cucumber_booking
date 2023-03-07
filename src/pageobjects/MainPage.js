@@ -1,6 +1,5 @@
 import BasePage from './BasePage.js';
 import ElementAction from '../helpers/ElementAction.js';
-import Waiters from '../helpers/Waiters.js';
 
 class MainPage extends BasePage {
   get ['Accept cookie button']() {
@@ -16,7 +15,6 @@ class MainPage extends BasePage {
     await ElementAction.fillField(selector, text);
     await ElementAction.click(this.chooseLocation(text));
     await ElementAction.click(selector);
-    await ElementAction.sendKeys(BasePage.enterKey);
   }
 }
 export default new MainPage();
