@@ -9,7 +9,6 @@ class GetData {
       await element.scrollIntoView({ block: 'center', inline: 'center' });
       if (visible) {
         await Waiters.waitElementIsDisplayed(elementLocator);
-        var a;
       }
       return element;
     } catch (e) {
