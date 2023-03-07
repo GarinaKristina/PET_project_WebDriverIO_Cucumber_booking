@@ -12,7 +12,7 @@ class MainPage extends BasePage {
   chooseLocation = (locationName) => `//*[normalize-space()="${locationName}"]`;
 
   async chooseLocationFromSearchField(selector, text) {
-    await ElementAction.fillField(selector, text);
+    await ElementAction.setInputValue(selector, text);
     await ElementAction.click(this.chooseLocation(text));
     await ElementAction.click(selector);
   }

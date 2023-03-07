@@ -28,7 +28,7 @@ class ElementAction {
     }
   }
 
-  async fillField(selector, text) {
+  async setInputValue(selector, text) {
     await this.setValueInField(selector, text);
   }
 }
