@@ -9,7 +9,7 @@ class MainPage extends BasePage {
     return '//input[@name="ss"]';
   }
 
-  chooseLocation = (locationName) => `//*[normalize-space()="${locationName}"]`;
+  chooseLocation = locationName => `//*[normalize-space()="${locationName}"]`;
 
   async chooseLocationFromSearchField(selector, text) {
     await ElementAction.setInputValue(selector, text);

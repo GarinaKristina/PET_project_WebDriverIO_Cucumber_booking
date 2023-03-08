@@ -17,6 +17,6 @@ When(/^Type "([^"]*)" on Main Page in "([^"]*)"$/, async (text, fieldName) => {
   await ElementAction.sendKeys(Pages['Main Page'].enterKey);
 });
 
-Then(/^Check the title contains "([^"]*)"$/, async (expectedTitle) => {
+Then(/^Check the title contains "([^"]*)"$/, async expectedTitle => {
   await Pages['Main Page'].checkTitle(expectedTitle);
 });
