@@ -3,7 +3,7 @@ export const config = {
 
   specs: ['./features/**/*.feature'],
 
-  exclude: ['./features/**/OpenWebSite.feature'],
+  // exclude: [''],
 
   maxInstances: 10,
 
@@ -46,7 +46,7 @@ export const config = {
     ],
   ],
   cucumberOpts: {
-    require: ['./features/step-definitions/steps.js'],
+    require: ['./src/step-definitions/**/*.js'],
     backtrace: false,
     requireModule: [],
     dryRun: false,
@@ -69,4 +69,3 @@ export const config = {
     }
   },
 };
-

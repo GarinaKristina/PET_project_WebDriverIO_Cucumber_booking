@@ -1,4 +1,4 @@
-import ErrorWrapper from '../utils/ErrorWraper.js';
+import ErrorWrapper from '../helpers/utils/ErrorWraper.js';
 import GetData from './GetData.js';
 
 class ElementAction {
@@ -11,12 +11,20 @@ class ElementAction {
     }
   }
 
-  async setValueInField(selector, text, visible = true) {
+  async setInputValue(selector, text, visible = true) {
     try {
       const element = await GetData.getElement(selector, visible);
       await element.setValue(text);
     } catch (error) {
       throw ErrorWrapper.elementError(error, element);
+    }
+  }
+
+  async sendKeys(keyText) {
+    try {
+      await browser.keys(keyText);
+    } catch (error) {
+      throw ErrorWrapper.elementError(error, keyText);
     }
   }
 }
