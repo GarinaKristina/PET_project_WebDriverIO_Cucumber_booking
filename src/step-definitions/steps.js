@@ -1,5 +1,6 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 import ElementAction from '../helpers/ElementAction.js';
+import Waiters from '../helpers/Waiters.js';
 import Pages from '../pageobjects/PageFactory.js';
 
 Given(/^Open www.booking.com website$/, async () => {
@@ -19,4 +20,9 @@ When(/^Type "([^"]*)" on Main Page in "([^"]*)"$/, async (text, fieldName) => {
 
 Then(/^Check the title contains "([^"]*)"$/, async expectedTitle => {
   await Pages['Main Page'].checkTitle(expectedTitle);
+});
+
+Then(/^I expect menu sections "([^"]*)" on the "([^"]*)" is clickable$/, async (options, pageName) => {
+  const locator = Pages[pageName]['menu sections'](options);
+  await Waiters.waitElementIsClickable(locator);
 });

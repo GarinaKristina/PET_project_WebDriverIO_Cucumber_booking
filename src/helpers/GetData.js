@@ -5,11 +5,8 @@ class GetData {
   async getElement(elementLocator, visible = true) {
     try {
       const element = await $(elementLocator);
-      await Waiters.waitElementIsExist(elementLocator);
+      await Waiters.waiteElementIsDisplayed(elementLocator);
       await element.scrollIntoView({ block: 'center', inline: 'center' });
-      if (visible) {
-        await Waiters.waitElementIsDisplayed(elementLocator);
-      }
       return element;
     } catch (e) {
       throw ErrorWrapper.elementError(e, elementLocator);

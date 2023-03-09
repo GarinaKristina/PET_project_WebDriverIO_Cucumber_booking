@@ -21,7 +21,7 @@ As a report I choose the Allure report,I liked it because it clearly and beautif
 In addition, I used pre/post to run the scripts.
 ![Screenshot reporter result](https://github.com/GarinaKristina/PET_project_WebDriverIO_Cucumber_booking/blob/main/picture_for_readme/scripts.jpg)
 
-I also implemented the use of the tool ESLint, with some rules about quotes and equals, in the future, I am going to add more rules.
+I also implemented the use of the tool ESLint and Preetier, with rules.
 
 The next thing I want to do is set up CI
 

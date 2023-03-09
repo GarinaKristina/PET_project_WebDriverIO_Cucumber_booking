@@ -1,7 +1,7 @@
 export const config = {
   runner: 'local',
 
-  specs: ['./features/**/*.feature'],
+  specs: ['./features/**/OptionsOntheMainPage.feature'],
 
   // exclude: [''],
 

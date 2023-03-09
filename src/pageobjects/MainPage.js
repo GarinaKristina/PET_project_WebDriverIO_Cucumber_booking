@@ -8,7 +8,9 @@ class MainPage extends BasePage {
   get ['Where you want to move field']() {
     return '//input[@name="ss"]';
   }
-
+  ['menu sections'](options) {
+    return `//span[contains(text(), "${options}")]`;
+  }
   chooseLocation = locationName => `//*[normalize-space()="${locationName}"]`;
 
   async chooseLocationFromSearchField(selector, text) {
