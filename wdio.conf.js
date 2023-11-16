@@ -1,7 +1,7 @@
 export const config = {
   runner: 'local',
 
-  specs: ['./features/**/OptionsOntheMainPage.feature'],
+  specs: ['./features/**/**.feature'],
 
   // exclude: [''],
 
@@ -49,7 +49,7 @@ export const config = {
     ],
   ],
   cucumberOpts: {
-    require: ['./src/step-definitions/**/*.js'],
+    require: ['./src/step-definitions/**.js'],
     backtrace: false,
     requireModule: [],
     dryRun: false,
