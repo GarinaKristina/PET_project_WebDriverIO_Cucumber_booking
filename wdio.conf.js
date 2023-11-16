@@ -11,9 +11,8 @@ export const config = {
     {
       maxInstances: 5,
       browserName: 'chrome',
-      acceptInsecureCerts: true,
       'goog:chromeOptions': {
-        args: ['--no-sandbox'],
+        args: ['--headless', '--disable-gpu', '--no-sandbox'],
       },
       acceptInsecureCerts: true,
     },
