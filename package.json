@@ -20,10 +20,10 @@
   "scripts": {
     "prewdio": "rimraf allure-results && npx eslint ./src/**/*.js --fix",
     "wdio": "wdio run ./wdio.conf.js",
-    "postwdio": "allure generate allure-results/ --clean && allure open",
     "open_report": "allure open",
     "test": "wdio run ./wdio.conf.js",
     "prettier": "npx prettier --write .",
     "eslint": "npx eslint ./src/**/*.js --fix"
   }
 }
+
