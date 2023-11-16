@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Nov 16 20:08:04 GMT 2023","Thu Nov 16 20:08:06 GMT 2023","1888","","Open the website: As a user, I can open the website and see the main page","","","","Given Open www.booking.com website",""
+"passed","Thu Nov 16 20:08:04 GMT 2023","Thu Nov 16 20:08:06 GMT 2023","1831","","Booking the trip: Menu sections in clickable","","","","Given Open www.booking.com website",""
+"passed","Thu Nov 16 20:08:06 GMT 2023","Thu Nov 16 20:08:06 GMT 2023","1","","Open the website: As a user, I can open the website and see the main page","","","","",""
+"passed","Thu Nov 16 20:08:04 GMT 2023","Thu Nov 16 20:08:06 GMT 2023","1756","","Booking the trip: As a user, I can fill the fields and see list with hotels","","","","Given Open www.booking.com website",""
+"passed","Thu Nov 16 20:08:06 GMT 2023","Thu Nov 16 20:08:06 GMT 2023","4","","Booking the trip: Menu sections in clickable","","","","",""
+"passed","Thu Nov 16 20:08:06 GMT 2023","Thu Nov 16 20:08:06 GMT 2023","1","","Booking the trip: As a user, I can fill the fields and see list with hotels","","","","",""
