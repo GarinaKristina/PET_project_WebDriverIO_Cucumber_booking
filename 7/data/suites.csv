@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Nov 16 20:10:27 GMT 2023","Thu Nov 16 20:10:27 GMT 2023","0","","Open the website: As a user, I can open the website and see the main page","","","","",""
+"passed","Thu Nov 16 20:10:25 GMT 2023","Thu Nov 16 20:10:27 GMT 2023","1494","","Open the website: As a user, I can open the website and see the main page","","","","Given Open www.booking.com website",""
