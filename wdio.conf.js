@@ -12,6 +12,10 @@ export const config = {
       maxInstances: 5,
       browserName: 'chrome',
       acceptInsecureCerts: true,
+      'goog:chromeOptions': {
+        args: ['--no-sandbox'],
+      },
+      acceptInsecureCerts: true,
     },
   ],
 
@@ -69,3 +73,4 @@ export const config = {
     }
   },
 };
+
