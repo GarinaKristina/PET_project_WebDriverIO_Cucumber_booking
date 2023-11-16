@@ -1,0 +1,1 @@
+[{"uid":"bb0b625a6bec854d","name":"","time":{"start":1700167146353,"stop":1700167146354,"duration":1},"status":"passed","severity":"normal"},{"uid":"37d5ded396833a24","name":"Given Open www.booking.com website","time":{"start":1700167144450,"stop":1700167146353,"duration":1903},"status":"passed","severity":"normal"}]
