@@ -1,7 +1,7 @@
 export const config = {
   runner: 'local',
 
-  specs: ['./features/**/OptionsOntheMainPage.feature'],
+  specs: ['./features/**/OpenWebSite.feature'],
 
   // exclude: [''],
 
@@ -11,6 +11,9 @@ export const config = {
     {
       maxInstances: 5,
       browserName: 'chrome',
+      'goog:chromeOptions': {
+        args: ['--headless', '--no-sandbox'],
+      },
       acceptInsecureCerts: true,
     },
   ],
@@ -69,3 +72,4 @@ export const config = {
     }
   },
 };
+
