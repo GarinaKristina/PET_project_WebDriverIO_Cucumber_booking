@@ -1,7 +1,7 @@
 export const config = {
   runner: 'local',
 
-  specs: ['./features/**/**.feature'],
+  specs: ['./features/**/OpenWebSite.feature'],
 
   // exclude: [''],
 
@@ -12,7 +12,7 @@ export const config = {
       maxInstances: 5,
       browserName: 'chrome',
       'goog:chromeOptions': {
-        args: ['--headless', '--disable-gpu', '--no-sandbox'],
+        args: ['--headless', '--no-sandbox'],
       },
       acceptInsecureCerts: true,
     },
@@ -49,7 +49,7 @@ export const config = {
     ],
   ],
   cucumberOpts: {
-    require: ['./src/step-definitions/**.js'],
+    require: ['./src/step-definitions/**/*.js'],
     backtrace: false,
     requireModule: [],
     dryRun: false,
